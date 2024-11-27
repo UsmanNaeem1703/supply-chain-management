@@ -1,16 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Table, Button } from 'react-bootstrap';
 import Cookies from 'js-cookie';
-import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../Contexts/UserProvider';
 import axios from 'axios';
-import io from 'socket.io-client';
 
 function RequestList(props) {
     const { user } = useContext(UserContext);
     const [requests, setRequests] = useState([]);
     const [isLoading, setLoading] = useState(true);
-    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchRequests = async () => {
@@ -95,7 +92,7 @@ function RequestList(props) {
             <div className='mb-4 mt-4'>Hello {user.username},</div>
             <div className='card shadow mb-4'>
                 <div className='card-header py-3'>
-                    <h6 className='mb-3 font-weight-bold text-primary'>Buyer's Requests</h6>
+                    <h6 className='mb-3 font-weight-bold text-dark'>Buyer's Requests</h6>
                 </div>
                 <div className='card-body'>
                     {isLoading ? (

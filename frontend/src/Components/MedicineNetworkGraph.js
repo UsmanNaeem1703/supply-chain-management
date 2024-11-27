@@ -62,7 +62,7 @@ function MedicineNetworkGraph() {
 
     return (
         <div className="container mt-4">
-            <h3>Search Medicine</h3>
+            {/* <h3>Search Medicine</h3> */}
             <InputGroup>
                 <FormControl
                     type="text"

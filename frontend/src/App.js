@@ -10,7 +10,6 @@ import Header from './Components/Header';
 import { UserProvider } from "./Contexts/UserProvider";
 import Signup from './Pages/SignUp';
 import Login from './Pages/Login';
-import AdminPanel from './Pages/AdminPanel';
 import ProductList from './Components/ProductsList/Productslist';
 import ProductCreate from './Components/ProductCreate/ProductCreate';
 import Portal from './Pages/Portal';
@@ -32,6 +31,7 @@ function App() {
     setExpanded(e);
     // console.log(expanded);
   };
+
   return (
     <BrowserRouter>
       <UserProvider>
@@ -69,7 +69,6 @@ function App() {
               <Route path='myRequest-list' element={<MyRequestList />} />
               <Route path='request-create' element={<RequestCreate />} />
             </Route>
-            {/* <Route path="/*" element={<NotFound />} /> */}
           </Routes>
         </div>
       </UserProvider>

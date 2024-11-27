@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import Cookies from 'js-cookie';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function UserView(props) {
     const [user, setUser] = useState(props.user);
@@ -37,7 +37,7 @@ function UserView(props) {
             <h3 className='mb-3 mt-3 d-inline-block float-right' style={{ "cursor": "pointer" }} onClick={() => props.setCurrentUser(null)}>❌</h3>
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
-                    <h6 className="mb-3 font-weight-bold text-primary">User Details</h6>
+                    <h6 className="mb-3 font-weight-bold text-dark">User Details</h6>
                 </div>
                 <div className="card-body">
                     {isLoading ? <img src='https://media.giphy.com/media/ZO9b1ntYVJmjZlsWlm/giphy.gif' alt="Loading" />
@@ -61,7 +61,7 @@ function UserView(props) {
                                         )}
                                     </tbody>
                                 </Table>
-                                <h6 className="mb-3 font-weight-bold text-primary">Associated Nodes</h6>
+                                <h6 className="mb-3 font-weight-bold text-dark">Associated Pharmacies</h6>
                                 <Table striped className="table table-bordered" width="100%" cellSpacing="0">
                                     <thead>
                                         <tr>

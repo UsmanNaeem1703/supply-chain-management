@@ -28,7 +28,7 @@ function ProductList() {
   return (
     <>
       <div className="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 className="h3 mb-0 text-gray-800">Product List</h1>
+        <h1 className="h3 mb-0 text-dark">Product List</h1>
         <Link to="/admin/products/create-product" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
           <FontAwesomeIcon icon={faShoppingCart} className="text-white mr-2" />
           Add Product
@@ -47,7 +47,7 @@ function ProductList() {
       {/* <!-- DataTables --> */}
       <div className="card shadow mb-4">
         <div className="card-header py-3">
-          <h6 className="m-0 font-weight-bold text-primary">Products</h6>
+          <h6 className="m-0 font-weight-bold text-dark">Products</h6>
         </div>
         <div className="card-body">
           {

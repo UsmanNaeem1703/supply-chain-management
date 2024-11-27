@@ -56,7 +56,7 @@ function NodeCreate() {
 
   return (
     <div className='container'>
-      <h1 className='mt-4'>Add New Node</h1>
+      <h1 className='mt-4 text-dark'>Add New Node</h1>
       <form onSubmit={myFormik.handleSubmit}>
         <div className='row'>
           <div className="col-lg-6">

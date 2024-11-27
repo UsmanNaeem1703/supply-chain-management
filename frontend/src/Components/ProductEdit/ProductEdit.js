@@ -74,7 +74,7 @@ function ProductEdit() {
 
     return (
         <>
-            <h3 className='mt-3 mb-3 d-inline-block'>ProductEdit - ID: {params.id}</h3>
+            <h3 className='mt-3 mb-3 d-inline-block text-dark'>ProductEdit - ID: {params.id}</h3>
             <h3 className='mt-3 mb-3 float-right' onClick={() => navigate('/admin/products/product-list')}>❌</h3>
             <div className='container'>
                 <form onSubmit={myFormik.handleSubmit}>
@@ -82,35 +82,35 @@ function ProductEdit() {
                         <div className="col-lg-6">
                             <label>Batch Number</label>
                             <input name='batchNumber' value={myFormik.values.batchNumber} onChange={myFormik.handleChange} type="text"
-                                className={`form-control ${myFormik.errors.batchNumber ? "is-invalid" : ""}`} />
+                                className={`customform form-control ${myFormik.errors.batchNumber ? "is-invalid" : ""}`} />
                             <span style={{ color: "red" }}>{myFormik.errors.batchNumber}</span>
                         </div>
 
                         <div className="col-lg-6">
                             <label>Name</label>
                             <input name='name' value={myFormik.values.name} onChange={myFormik.handleChange} type="text"
-                                className={`form-control ${myFormik.errors.name ? "is-invalid" : ""}`} />
+                                className={`customform form-control ${myFormik.errors.name ? "is-invalid" : ""}`} />
                             <span style={{ color: "red" }}>{myFormik.errors.name}</span>
                         </div>
 
                         <div className="col-lg-6">
                             <label>Brand</label>
                             <input name='brand' value={myFormik.values.brand} onChange={myFormik.handleChange} type="text"
-                                className={`form-control ${myFormik.errors.brand ? "is-invalid" : ""}`} />
+                                className={`customform form-control ${myFormik.errors.brand ? "is-invalid" : ""}`} />
                             <span style={{ color: "red" }}>{myFormik.errors.brand}</span>
                         </div>
 
                         <div className="col-lg-6">
                             <label>Unit Price</label>
                             <input name='unitPrice' value={myFormik.values.unitPrice} onChange={myFormik.handleChange} type="number"
-                                className={`form-control ${myFormik.errors.unitPrice ? "is-invalid" : ""}`} />
+                                className={`customform form-control ${myFormik.errors.unitPrice ? "is-invalid" : ""}`} />
                             <span style={{ color: "red" }}>{myFormik.errors.unitPrice}</span>
                         </div>
 
                         <div className="col-lg-6">
                             <label>Retail Price</label>
                             <input name='retailPrice' value={myFormik.values.retailPrice} onChange={myFormik.handleChange} type="number"
-                                className={`form-control ${myFormik.errors.retailPrice ? "is-invalid" : ""}`} />
+                                className={`customform form-control ${myFormik.errors.retailPrice ? "is-invalid" : ""}`} />
                             <span style={{ color: "red" }}>{myFormik.errors.retailPrice}</span>
                         </div>
 

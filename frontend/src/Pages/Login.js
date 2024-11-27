@@ -60,7 +60,7 @@ const Login = () => {
                 refreshUserData();
                 // console.log(response.data.data.role);
                 // Cookies.set('role', response.data.data.user.role, { expires: 7 });
-                navigate('/subscriptions')
+                navigate('/buyer-request/request-list')
             }
         } catch (error) {
             //console.log(error);

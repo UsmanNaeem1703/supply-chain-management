@@ -120,7 +120,7 @@ function RequestCreate() {
                     { headers }
                 );
                 alert('Request created successfully!');
-                navigate('/buyer-request/request-list'); // Adjust the path as needed
+                navigate('/buyer-request/myRequest-list'); // Adjust the path as needed
             } catch (error) {
                 console.error('Failed to create request:', error);
                 alert('Failed to create request');
@@ -180,7 +180,7 @@ function RequestCreate() {
 
     return (
         <div className="container">
-            <h1 className="mt-4">Create New Request</h1>
+            <h1 className="mt-4 text-dark">Create New Request</h1>
             <form onSubmit={formik.handleSubmit}>
                 <div className="row">
                     {/* Buyer Node */}
@@ -190,7 +190,7 @@ function RequestCreate() {
                             name="buyerNode"
                             value={formik.values.buyerNode}
                             onChange={formik.handleChange}
-                            className={`form-control ${formik.errors.buyerNode ? 'is-invalid' : ''
+                            className={`customform form-control ${formik.errors.buyerNode ? 'is-invalid' : ''
                                 }`}
                         >
                             <option value="">Select Buyer Node</option>
@@ -211,7 +211,7 @@ function RequestCreate() {
                             name="sellerNode"
                             value={formik.values.sellerNode}
                             onChange={formik.handleChange}
-                            className={`form-control ${formik.errors.sellerNode ? 'is-invalid' : ''
+                            className={`customform form-control ${formik.errors.sellerNode ? 'is-invalid' : ''
                                 }`}
                         >
                             <option value="">Select Seller Node</option>
@@ -232,7 +232,7 @@ function RequestCreate() {
                             name="medicine"
                             value={formik.values.medicine}
                             onChange={formik.handleChange}
-                            className={`form-control ${formik.errors.medicine ? 'is-invalid' : ''
+                            className={`customform form-control ${formik.errors.medicine ? 'is-invalid' : ''
                                 }`}
                             disabled={!formik.values.sellerNode}
                         >
@@ -257,7 +257,7 @@ function RequestCreate() {
                             type="number"
                             min="1"
                             max={maxQuantity}
-                            className={`form-control ${formik.errors.quantity ? 'is-invalid' : ''
+                            className={`customform form-control ${formik.errors.quantity ? 'is-invalid' : ''
                                 }`}
                             disabled={!formik.values.medicine}
                         />

@@ -65,8 +65,7 @@ const getRequests = async (req, res) => {
             return res.status(404).json({ error: 'No Requests Found' });
         }
 
-        return res.status(201).json({
-            success: 'Request has been posted successfully',
+        return res.status(200).json({
             requests
         });
 
@@ -114,11 +113,12 @@ const deleteRequest = async (req, res) => {
         }
 
         // Delete the request
-        await Requests.findByIdAndDelete(requestId);
+        const updatedRequest = await Requests.findByIdAndUpdate(requestId, { status: 'Rejected' }, { new: true });
 
         res.status(200).json({
             status: 'success',
             message: 'Request deleted successfully',
+            updatedRequest
         });
     } catch (err) {
         res.status(500).json({

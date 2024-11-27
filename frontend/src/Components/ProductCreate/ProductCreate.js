@@ -68,7 +68,7 @@ function ProductCreate() {
 
   return (
     <div className='container'>
-      <h1 className='mt-4'>Create New Product</h1>
+      <h1 className='mt-4 text-dark'>Create New Product</h1>
       <form onSubmit={myFormik.handleSubmit}>
         <div className='row'>
           <div className="col-lg-6">

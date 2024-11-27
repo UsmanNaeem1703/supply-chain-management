@@ -61,7 +61,7 @@ function Graph({ transactions }) {
                 shape: 'dot',
                 size: 20,
                 font: {
-                    size: 14,
+                    size: 16,
                     color: 'white'
                 }
             },

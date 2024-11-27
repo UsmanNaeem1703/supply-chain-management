@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Cookies from 'js-cookie';
 import { UserContext } from '../../Contexts/UserProvider';
 
@@ -57,7 +55,7 @@ function TransactionList() {
             {/* <!-- DataTables --> */}
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
-                    <h6 className="m-0 font-weight-bold text-primary">Transactions</h6>
+                    <h6 className="m-0 font-weight-bold text-dark">Transactions</h6>
                 </div>
                 <div className="card-body">
                     {

@@ -36,7 +36,7 @@ function NodeView() {
     return (
         <div className="card shadow mb-4">
             <div className="card-header py-3">
-                <h6 className="m-0 font-weight-bold text-primary">Node Details</h6>
+                <h6 className="m-0 font-weight-bold text-dark">Node Details</h6>
             </div>
             <div className="card-body">
                 {isLoading ? <img src='https://media.giphy.com/media/ZO9b1ntYVJmjZlsWlm/giphy.gif' alt="Loading" />
@@ -70,7 +70,7 @@ function NodeView() {
                                     </tr>
                                 </tbody>
                             </Table>
-                            <h6 className="mb-3 font-weight-bold text-primary">Inventory Details</h6>
+                            <h6 className="mb-3 font-weight-bold text-dark">Inventory Details</h6>
                             <Table striped bordered hover>
                                 <thead>
                                     <tr>

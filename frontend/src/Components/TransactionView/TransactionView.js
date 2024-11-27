@@ -32,7 +32,7 @@ function TransactionView() {
     return (
         <div className="card shadow mb-4 mt-4">
             <div className="card-header py-3">
-                <h6 className="mt-3 mb-3 font-weight-bold text-primary">Transaction Details</h6>
+                <h6 className="mt-3 mb-3 font-weight-bold text-dark">Transaction Details</h6>
             </div>
             <div className="card-body">
                 {isLoading ? (

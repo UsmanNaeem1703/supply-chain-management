@@ -64,11 +64,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/v1/users", userRouter);
-app.use("/api/v1/nodes", nodeRouter);
-app.use("/api/v1/products", productRouter);
-app.use("/api/v1/transactions", transactionRouter);
-app.use("/api/v1/requests", requestsRouter);
+app.use("/api/v1/users", userRouter); // For handling user related requests like login/signup
+app.use("/api/v1/nodes", nodeRouter); // For add, get and update nodes
+app.use("/api/v1/products", productRouter); // For add, update and get medicines
+app.use("/api/v1/transactions", transactionRouter); // For getting transactions
+app.use("/api/v1/requests", requestsRouter); // For adding, getting and deleting requests
 
 // app.use("/api/v1/image", imageRouter);
 app.all("*", (req, res, next) => {

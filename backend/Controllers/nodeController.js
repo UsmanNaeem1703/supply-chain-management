@@ -5,7 +5,7 @@ const Transaction = require('../Models/Transaction');
 const Product = require('../Models/Product');
 const { Web3 } = require('web3')
 const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
-const contractAddress = '0x092Aa6A052D3A6418af7970bD53B33fD6eb2F314';
+const contractAddress = '0x83F6e4c44D2D23f2a3A5f3D7842A04420da45Cf8';
 const contractABI = [
     {
         "anonymous": false,
@@ -65,7 +65,7 @@ const contractABI = [
 ];
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 // Add a single node
-const addNode = async (req, res) => {
+const addNode = async (req, res) => {   // TO add pharmacy
     try {
         const { name, address, etherAddress } = req.body;
         const newNode = new Node({
@@ -217,13 +217,13 @@ const updateNodeInventory = async (req, res) => {
         // Perform Ether transfer on Ethereum network
         const receipt = await contract.methods.transferEther(senderAddress, transferAmountWei)
             .send({ from: receiverAddress, value: transferAmountWei });
-        console.log('Transaction hash:', receipt.transactionHash);
+        // console.log('Transaction hash:', receipt.transactionHash);
         const sanitizedReceipt = JSON.parse(JSON.stringify(receipt, (_, v) =>
             typeof v === 'bigint' ? v.toString() : v
         ));
 
         newTransaction.blockchainTxHash = sanitizedReceipt.transactionHash;
-        const deletedRequest = await Requests.findByIdAndDelete(requestId);
+        const updatedRequest = await Requests.findByIdAndUpdate(requestId, { status: 'Accepted' }, { new: true });
         await newTransaction.save({ session });
         await session.commitTransaction();
         session.endSession();
@@ -232,7 +232,7 @@ const updateNodeInventory = async (req, res) => {
             transaction: newTransaction,
             sender: senderNode,
             receiver: receiverNode,
-            deletedRequest,
+            updatedRequest,
             ethTransactionReceipt: sanitizedReceipt
         });
     } catch (err) {

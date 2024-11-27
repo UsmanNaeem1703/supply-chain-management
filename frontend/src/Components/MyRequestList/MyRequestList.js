@@ -65,7 +65,7 @@ function MyRequestList(props) {
             <div className='mb-4 mt-4'>Hello {user.username},</div>
             <div className='card shadow mb-4'>
                 <div className='card-header py-3'>
-                    <h6 className='mb-3 font-weight-bold text-primary'>My Requests</h6>
+                    <h6 className='mb-3 font-weight-bold text-dark'>My Requests</h6>
                 </div>
                 <div className='card-body'>
                     {isLoading ? (
